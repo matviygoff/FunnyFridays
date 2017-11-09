@@ -1,7 +1,3 @@
-﻿/*
-	Данный файл определяет настройки для компилятора TypeScript. 
-	Опция "compilerOptions" устанавливает параметры компиляции. А опция "exclude" исключает из компиляции папку node_modules, которая содержит все загруженные пакеты.
-	*/
 {
 	"compilerOptions": {
 		"target": "es5",
@@ -10,14 +6,12 @@
 		"sourceMap": true,
 		"emitDecoratorMetadata": true,
 		"experimentalDecorators": true,
-		"lib": [ "es2015", "dom" ],
-		"noImplicitAny": true,
-		"suppressImplicitAnyIndexErrors": true,
-		"typeRoots": [
-			"node_modules/@types/"
-		]
+		"lib": [ "es6", "dom" ],
+		"skipDefaultLibCheck": true,
+		"skipLibCheck": true, // Workaround for https://github.com/angular/angular/issues/17863. Remove this if you upgrade to a fixed version of Angular.
+		"strict": true,
+		"types": [ "webpack-env" ]
 	},
-	"exclude": [
-		"node_modules"
-	]
+	"exclude": [ "bin", "node_modules" ],
+	"atom": { "rewriteTsconfig": false }
 }
