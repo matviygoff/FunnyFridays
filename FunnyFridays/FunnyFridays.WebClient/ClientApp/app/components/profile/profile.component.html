@@ -1,0 +1,21 @@
+<h1>Profile</h1>
+
+<div class="form-inline">
+	<div class="col-md-3">
+		<input type="tel" class="form-control" [(ngModel)]="phone" placeholder="+380_______" />
+	</div>
+	<div class="col-md-3">
+		<input type="password" class="form-control" [(ngModel)]="password" placeholder="password" />
+	</div>
+	<div class="col-md-3">
+		<input class="form-control" [(ngModel)]="username" placeholder="Your Name" />
+	</div>
+	<div class="col-md-3">
+		<div class="col-md-6">
+			<button class="btn btn-default" (click)="addUser(phone, password,username)">Register</button>
+		</div>
+		<div class="col-md-6">
+			<button class="btn btn-default" (click)="showMessage(getUserName(phone, password))">Login</button>
+		</div>
+	</div>
+</div>
